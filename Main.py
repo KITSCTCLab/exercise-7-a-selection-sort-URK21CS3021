@@ -14,7 +14,6 @@ def selectionSort(array, size):
         (array[step], array[min_idx]) = (array[min_idx], array[step])
 
 
-data = [-2, 45, 0, 11, -9]
 size = len(data)
 selectionSort(data, size)
 print('Sorted Array in Ascending Order:')
