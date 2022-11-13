@@ -1,20 +1,19 @@
-def selectionSort(array, size):
-   
-    for step in range(size):
-        min_idx = step
+from typing import List
 
-        for i in range(step + 1, size):
-         
-            # to sort in descending order, change > to < in this line
-            # select the minimum element in each loop
-            if array[i] < array[min_idx]:
-                min_idx = i
-         
-        # put min at the correct position
-        (array[step], array[min_idx]) = (array[min_idx], array[step])
+def selectionSort(array, size) -> List[int]:
+    for y in range(len(array)):
+        mid = y
+        for j in range(y+1,len(array)):
+            if array[mid] > array[j]:
+                mid = j
+        array[y], array[mid] = array[mid] , array[y]
+    return array
 
-
-size = len(data)
-selectionSort(data, size)
-print('Sorted Array in Ascending Order:')
-print(data)
+input_data = input()
+data = []
+for item in input_data.split(', '):
+  if item.isnumeric():
+    data.append(int(item))
+  elif item.lstrip("-").isnumeric():
+    data.append(int(item))
+print(selectionSort(data, len(data)))
